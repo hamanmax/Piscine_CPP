@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:50:33 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/15 20:53:07 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 23:13:20 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ int main(int argc, char **argv)
 	(void)argc;
 	(void)argv;
 	std::string cmd;
-	while (1)
+	while (std::getline(std::cin,cmd))
 	{
-		std::cin >> cmd;
 		if (cmd == "EXIT")
 			return(0);
 		else if (cmd == "ADD")
@@ -44,12 +43,12 @@ int main(int argc, char **argv)
 				std::cout << "SEARCH NEED AT LEAST ONE ENTRY" << std::endl;
 				continue ;
 			}
-			std::cout << "INDEX | FIRSTNAME |  LASTNAME  |  NICKNAME  |" << std::endl;
+			std::cout << "     INDEX| FIRSTNAME|  LASTNAME|  NICKNAME|" << std::endl;
 			for(int i = 0; i < 8;i++)
 			{
 				if (contact[i].last_name != "NULL")
 				{
-					std::cout << "    " << i << " |";
+					std::cout << "         " << i << "|";
 					contact[i].print_contact_less();
 					std::cout << std::endl;
 				}
@@ -60,10 +59,10 @@ int main(int argc, char **argv)
 			if (std::cin.fail())
 			{
 				std::cin.clear();
-				std::cin >> cmd;
+				std::getline(std::cin,cmd);
 				std::cout << "WRONG INDEX" << std::endl;
 			}
-			else if ((j >= 0 && j <= 7))
+			else if ((j >= 0 && j <= 7) && contact[j].last_name != "NULL")
 				contact[j].print_contact();
 			else
 				std::cout << "WRONG INDEX :" << std::endl;
