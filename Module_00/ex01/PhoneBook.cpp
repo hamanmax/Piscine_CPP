@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:50:33 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/15 17:58:31 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 20:53:07 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,9 @@ int main(int argc, char **argv)
 	while (1)
 	{
 		std::cin >> cmd;
-		if (std::strcmp(cmd.c_str(),"EXIT") == 0)
-		{
+		if (cmd == "EXIT")
 			return(0);
-		}
-		else if (std::strcmp(cmd.c_str(),"ADD") == 0)
+		else if (cmd == "ADD")
 		{
 			if (i >= 8)
 			{
@@ -39,9 +37,9 @@ int main(int argc, char **argv)
 			contact[i].add_contact();
 			i++;
 		}
-		else if (std::strcmp(cmd.c_str(),"SEARCH") == 0)
+		else if (cmd == "SEARCH")
 		{
-			if (std::strcmp(contact[0].last_name.c_str(),"NULL") == 0)
+			if (contact[0].last_name == "NULL")
 			{
 				std::cout << "SEARCH NEED AT LEAST ONE ENTRY" << std::endl;
 				continue ;
@@ -56,27 +54,22 @@ int main(int argc, char **argv)
 					std::cout << std::endl;
 				}
 			}
+			j = 0;
 			std::cout << "CHOSE INDEX :";
 			std::cin >> j;
 			if (std::cin.fail())
 			{
 				std::cin.clear();
 				std::cin >> cmd;
-				std::cout << "WRONG INDEX :" << std::endl;
+				std::cout << "WRONG INDEX" << std::endl;
 			}
 			else if ((j >= 0 && j <= 7))
-			{
 				contact[j].print_contact();
-			}
 			else
-			{
 				std::cout << "WRONG INDEX :" << std::endl;
-			}
 		}
 		else
-		{
 			std::cout << "COMMAND NOT FOUND" << std::endl;
-		}
 	}
 	return (0);
 }
