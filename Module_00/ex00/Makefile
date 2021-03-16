@@ -6,7 +6,7 @@
 #    By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/15 12:26:09 by mhaman            #+#    #+#              #
-#    Updated: 2021/03/15 12:40:55 by mhaman           ###   ########lyon.fr    #
+#    Updated: 2021/03/16 10:06:24 by mhaman           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRC		=	megaphone.cpp\
 
 OBJ		=	${SRC:.cpp=.o}
 
-FLAG	=	-Wall -Wextra -Werror
+FLAG	=	-Wall -Werror -Wextra -std=c++98
 
 NAME	=	megaphone
 

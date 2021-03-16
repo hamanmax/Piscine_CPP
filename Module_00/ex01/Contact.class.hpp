@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:49:08 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/16 10:04:19 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 10:05:36 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 class Contact
 {
 private:
-
 	std::string first_name;
 	std::string last_name;
 	std::string nick_name;
