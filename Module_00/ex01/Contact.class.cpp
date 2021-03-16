@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 14:03:41 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/15 23:24:56 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 09:55:15 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,8 @@ void Contact::print_contact(void)
 	std::cout << "FAVOURITE MEAL\t\t:" << favorite_meal << std::endl;
 	std::cout << "UNDERWEAR COLOR\t\t:" << underwear_color << std::endl;
 	std::cout << "DARKEST SECRET\t\t:" << darkest_secret << std::endl;
+}
+std::string Contact::getlast_name(void) const
+{
+	return(this->last_name);
 }
