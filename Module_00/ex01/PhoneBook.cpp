@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:50:33 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/16 10:03:24 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 10:53:26 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int main(int argc, char **argv)
 				i = 0;
 			}
 			contact[i].add_contact();
+			contact->setnbcontact(i);
 			i++;
 		}
 		else if (cmd == "SEARCH")
@@ -59,16 +60,15 @@ int main(int argc, char **argv)
 			if (std::cin.fail())
 			{
 				std::cin.clear();
-				std::getline(std::cin,cmd);
 				std::cout << "WRONG INDEX" << std::endl;
 			}
-			else if ((j >= 0 && j <= 7) && contact[i - 1].getlast_name() != "NULL")
+			else if ((j >= 0 && j <= 7) && contact->getnbcontact() >= j)
 			{
 				contact[j].print_contact();
-				std::getline(std::cin,cmd);
 			}
 			else
 				std::cout << "WRONG INDEX :" << std::endl;
+			std::getline(std::cin,cmd);
 		}
 		else
 			std::cout << "COMMAND NOT FOUND" << std::endl;

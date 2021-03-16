@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 14:03:41 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/16 09:55:15 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 10:37:01 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,14 @@ void Contact::print_contact(void)
 std::string Contact::getlast_name(void) const
 {
 	return(this->last_name);
+}
+
+int Contact::getnbcontact(void)
+{
+	return(this->nbcontact);
+}
+int Contact::setnbcontact(int i)
+{
+	this->nbcontact = i;
+	return(nbcontact);
 }

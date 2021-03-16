@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:49:08 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/16 10:05:36 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 10:31:31 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ private:
 	std::string favorite_meal;
 	std::string underwear_color;
 	std::string darkest_secret;
+	int	nbcontact;
 public:
 	std::string getlast_name(void) const;
 	std::string setlast_name(void);
+	int getnbcontact(void);
+	int setnbcontact(int i);
 	void add_contact(void);
 	void print_contact(void);
 	void print_contact_less(void);
