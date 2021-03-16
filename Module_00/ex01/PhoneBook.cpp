@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:50:33 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/16 11:29:31 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 11:33:55 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int main(int argc, char **argv)
 				std::cin.clear();
 				std::cout << "WRONG INDEX" << std::endl;
 			}
-			else if ((j >= 0 && j <= 7) && contact->getnbcontact() > j)
+			else if ((j >= 0 && j <= 7) && contact->getnbcontact() >= j)
 			{
 				contact[j].print_contact();
 			}
