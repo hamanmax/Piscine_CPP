@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 12:50:33 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/16 10:53:26 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 11:08:09 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main(int argc, char **argv)
 			std::cout << "     INDEX| FIRSTNAME|  LASTNAME|  NICKNAME|" << std::endl;
 			for(int i = 0; i < 8;i++)
 			{
-				if (contact[i].getlast_name() != "NULL")
+				if (i < contact->getnbcontact())
 				{
 					std::cout << "         " << i << "|";
 					contact[i].print_contact_less();
@@ -62,7 +62,7 @@ int main(int argc, char **argv)
 				std::cin.clear();
 				std::cout << "WRONG INDEX" << std::endl;
 			}
-			else if ((j >= 0 && j <= 7) && contact->getnbcontact() >= j)
+			else if ((j >= 0 && j <= 7) && contact->getnbcontact() > j)
 			{
 				contact[j].print_contact();
 			}
