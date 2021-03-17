@@ -6,10 +6,12 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 14:18:48 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/16 17:09:28 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 19:59:04 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PONY_HPP
+# define PONY_HPP
 #include "Pony.hpp"
 #include <iostream>
 
@@ -63,3 +65,5 @@ std::string Pony::get_color(void) const{
 std::string Pony::set_color(std::string str){
 	return(_color);
 }
+
+#endif

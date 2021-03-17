@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 17:16:09 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 07:08:28 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/03/17 12:54:08 by mhaman            #+#    #+#             */
+/*   Updated: 2021/03/17 15:43:56 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 #include <iostream>
-class Zombie
+
+class Brain
 {
 private:
-	std::string type;
-	std::string name;
+	void *address;
+	int _size;
+	int _height;
 public:
-	void advert();
-	Zombie(std::string get_type,std::string get_name);
-	Zombie();
-	~Zombie();
+	Brain(/* args */);
+	~Brain();
+	void * identifier() const;
 };
 
 #endif
