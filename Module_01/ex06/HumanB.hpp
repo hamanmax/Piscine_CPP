@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 12:54:03 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 18:11:10 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/03/17 16:07:29 by mhaman            #+#    #+#             */
+/*   Updated: 2021/03/17 18:19:28 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#ifndef HUMANB_HPP
+#define HUMANB_HPP
+#include "Weapon.hpp"
+#include <iostream>
 
-Brain::Brain(/* args */)
+class HumanB
 {
-	address = this;
-}
-
-Brain::~Brain()
-{
-}
-
-const void * Brain::identifier()const
-{
-	return(address);
-}
+private:
+	Weapon *M4_A4;
+	std::string _name;
+public:
+	void attack();
+	void setWeapon(Weapon& arme);
+	HumanB(std::string str);
+	~HumanB();
+};
+#endif

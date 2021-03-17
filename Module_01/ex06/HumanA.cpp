@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 12:54:03 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 18:11:10 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/03/17 16:06:56 by mhaman            #+#    #+#             */
+/*   Updated: 2021/03/17 18:14:15 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "HumanA.hpp"
 
-Brain::Brain(/* args */)
-{
-	address = this;
-}
+HumanA::HumanA(std::string str,Weapon& arme):_name(str),AK_47(arme){}
 
-Brain::~Brain()
+HumanA::~HumanA()
 {
 }
 
-const void * Brain::identifier()const
+void HumanA::attack()
 {
-	return(address);
+	std::cout << this->_name << " attacks with his "<< AK_47.getType()  << std::endl;
 }

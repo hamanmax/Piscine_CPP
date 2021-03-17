@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 12:54:03 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 18:11:10 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/03/17 16:07:41 by mhaman            #+#    #+#             */
+/*   Updated: 2021/03/17 17:39:05 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
+#include <iostream>
 
-Brain::Brain(/* args */)
+class Weapon
 {
-	address = this;
-}
+private:
+	std::string _type;
+public:
+	std::string getType();
+	void setType(std::string str);
+	Weapon(std::string str);
+	Weapon();
+	~Weapon();
+};
 
-Brain::~Brain()
-{
-}
-
-const void * Brain::identifier()const
-{
-	return(address);
-}
+#endif

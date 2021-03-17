@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 12:54:03 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 18:11:10 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/03/17 16:07:12 by mhaman            #+#    #+#             */
+/*   Updated: 2021/03/17 18:04:25 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
+#include "Weapon.hpp"
+#include <iostream>
 
-Brain::Brain(/* args */)
+class HumanA
 {
-	address = this;
-}
-
-Brain::~Brain()
-{
-}
-
-const void * Brain::identifier()const
-{
-	return(address);
-}
+private:
+	Weapon &AK_47;
+	std::string _name;
+public:
+	void attack();
+	HumanA(std::string str,Weapon& arme);
+	~HumanA();
+};
+#endif

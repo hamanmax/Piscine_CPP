@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 12:54:08 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 15:43:56 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/17 18:10:34 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 public:
 	Brain(/* args */);
 	~Brain();
-	void * identifier() const;
+	const void * identifier() const;
 };
 
 #endif
