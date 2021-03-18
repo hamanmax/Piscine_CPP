@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 10:59:48 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 12:45:34 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/18 10:31:09 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ZombieHorde::ZombieHorde(int n)
 {
 	nbzombie = n;
-	Z = {new Zombie[n]};
+	Z = new Zombie[n];
 	for(int i = 0;i < n;i++)
 		Z[i] = newZombie();
 }
