@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 13:21:04 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/18 18:05:13 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/19 10:36:47 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ Fixed::Fixed(/* args */){nb = 0;}
 Fixed::Fixed(const float fl)
 {
 	float nbr = (fl);
-
+	this->nb = nbr;
+	nbr *= 256;
+	//nb = (float)(nbr * (float)256);
 	nb = nbr;
-	nb = (float)(nbr * (float)(1 << Fixed::i));
+
 }
 
 Fixed::Fixed(const int nbr)
@@ -31,19 +33,13 @@ Fixed::Fixed(const int nbr)
 	}
 Fixed::~Fixed(){}
 
-int Fixed::toInt()const {
-		float f;
-		f = roundf(toFloat());
-	return((int)f);
-}
+int Fixed::toInt()const {return(int)(roundf(toFloat()));}
 
-// float Fixed::toFloat(void) const {
-// 	int nbr = nb;
-// 	float nbrrr;
-// 	nbr = nbr / 1 << 8;
-// 	nbrrr = (float)nbr;
-// 	return(nbrrr);
-// }
+std::ostream& operator<<(std::ostream& os, const Fixed& dt)
+{
+	os << (float)dt.toFloat();
+	return os;
+}
 
 float       Fixed::toFloat(void) const
 {
