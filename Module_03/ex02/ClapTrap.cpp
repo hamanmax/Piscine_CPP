@@ -6,19 +6,39 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:34:17 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/19 17:16:12 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 12:35:42 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::~ClapTrap()
-{
-	std::cout << "\n\n\nDESTRUCTION DU MODULE DE CREATION DE ROBOT\n\n\n" << std::endl;
-}
+
 ClapTrap::ClapTrap()
 {
 	std::cout << "\n\n\nINITIALISATION DU MODULE DE CREATION DE ROBOT\n\n\n" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap & cp){*this = cp;}
+
+ClapTrap & ClapTrap::operator=(const ClapTrap & op)
+{
+	if (this != &op)
+	{
+		this->_name = op._name;
+		this->_hit_point = op._hit_point;
+		this->_max_hit_point = op._max_hit_point;
+		this->_energy_point = op._energy_point;
+		this->_max_energy_point = op._max_energy_point;
+		this->_melee_damage = op._melee_damage;
+		this->_ranged_damage = op._ranged_damage;
+		this->_armor_damage_reduction = op._armor_damage_reduction;
+	}
+	return *this;
+}
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << "\n\n\nDESTRUCTION DU MODULE DE CREATION DE ROBOT\n\n\n" << std::endl;
 }
 
 

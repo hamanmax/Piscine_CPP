@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:29:28 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:41:36 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 12:17:12 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 ScavTrap::ScavTrap(){}
 
-ScavTrap::ScavTrap(const ScavTrap & cp){*this = cp;}
+ScavTrap::ScavTrap(ScavTrap const  & cp){*this = cp;}
 
-ScavTrap & ScavTrap::operator=(const ScavTrap & op)
+ScavTrap & ScavTrap::operator=(ScavTrap const & op)
 {
 	if (this != &op)
 	{

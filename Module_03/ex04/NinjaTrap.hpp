@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 13:35:37 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 11:46:29 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/03/20 10:18:04 by mhaman            #+#    #+#             */
+/*   Updated: 2021/03/20 18:42:21 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef NINJATRAP_HPP
+#define NINJATRAP_HPP
 #include <iostream>
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class Fixed
+class NinjaTrap: virtual public ClapTrap
 {
 private:
-	int nb;
-	static const int i = 8; 
+	/* data */
 public:
-		Fixed();
-		Fixed(const Fixed &c);
-		Fixed(const int nbr);
-		~Fixed();
-		Fixed(const float fl);
-		Fixed & operator=(const Fixed & copy);
-
-	int		getRawBits(void) const;
-	void	setRawBits(const int raw);
-	float	toFloat(void) const;
-	int		toInt(void) const;
+	NinjaTrap(std::string name);
+	NinjaTrap(NinjaTrap const  & cp);
+	NinjaTrap();
+	NinjaTrap & operator=(NinjaTrap const & op);
+	~NinjaTrap();
+	void ninjaShoebox(ClapTrap & box);
+	//const int getNinjaHitPoint() const;
 };
-
-std::ostream& operator<<(std::ostream& os, const Fixed& dt);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 11:29:24 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/19 13:42:47 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 12:42:17 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,18 @@ private:
 	int				_ranged_damage;
 	int				_armor_damage_reduction;
 public:
+	~FragTrap();
+	FragTrap();
+	FragTrap(const FragTrap & cp);
+	FragTrap & FragTrap::operator=(const FragTrap & op);
+	
+	FragTrap(std::string name);
+
 	void	rangedAttack(std::string const & target);
 	void	meleeAttack(std::string const & target);
 	void	vaulthunter_dot_exe(std::string const & target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
-
-	FragTrap(const FragTrap & cp);
-	FragTrap(std::string name);
-	~FragTrap();
 };
 
 #endif

@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/19 11:29:24 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:37:22 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/03/19 11:28:18 by mhaman            #+#    #+#             */
+/*   Updated: 2021/03/20 18:28:43 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
-#include <iostream>
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
+#include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
-class FragTrap : public ClapTrap
+int main(void)
 {
-	public :
-		FragTrap();
-		FragTrap(const FragTrap & cp);
-		FragTrap & operator=(const FragTrap & op);
-		~FragTrap();
+	srand(time(NULL));
+	SuperTrap DeadMachine("LAMAURE"); 
 
-		FragTrap(std::string name);
-	
-	void	vaulthunter_dot_exe(std::string const & target);
-};
-
-#endif
+	DeadMachine.takeDamage(100);
+	return 0;
+}

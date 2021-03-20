@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 13:52:10 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/19 16:33:35 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 12:41:27 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@
 class ScavTrap : public ClapTrap
 {
 	public :
-	void	challengeNewcomer();
-	ScavTrap(std::string name);
+	ScavTrap();
+	ScavTrap(const ScavTrap & cp);
+	ScavTrap & operator=(const ScavTrap & op);
 	~ScavTrap();
+	
+	ScavTrap(std::string name);
+	
+	void	challengeNewcomer();
 };
 
 #endif

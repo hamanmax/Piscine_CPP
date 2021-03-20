@@ -6,16 +6,18 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:29:28 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:41:36 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 12:53:13 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(){}
+ScavTrap::ScavTrap(){
+	std::cout << "\nDestruction en cours de "<< this->_name << "\n"<< std::endl;
+};
 
-ScavTrap::ScavTrap(const ScavTrap & cp){*this = cp;}
+ScavTrap::ScavTrap(const ScavTrap & cp){*this=cp;}
 
 ScavTrap & ScavTrap::operator=(const ScavTrap & op)
 {
@@ -33,10 +35,7 @@ ScavTrap & ScavTrap::operator=(const ScavTrap & op)
 	return *this;
 }
 
-ScavTrap::~ScavTrap(){
-	std::cout << "\nDestruction en cours de "<< this->_name << "\n"<< std::endl;
-};
-
+ScavTrap::~ScavTrap(){}
 
 ScavTrap::ScavTrap(std::string name)
 {

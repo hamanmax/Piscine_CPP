@@ -6,13 +6,36 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:50:19 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/19 13:41:14 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/20 12:30:45 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(){}
+
 FragTrap::FragTrap(const FragTrap & cp){*this = cp;}
+
+FragTrap & FragTrap::operator=(const FragTrap & op)
+{
+	if (this != &op)
+	{
+		this->_name = op._name;
+		this->_hit_point = op._hit_point;
+		this->_max_hit_point = op._max_hit_point;
+		this->_energy_point = op._energy_point;
+		this->_max_energy_point = op._max_energy_point;
+		this->_melee_damage = op._melee_damage;
+		this->_ranged_damage = op._ranged_damage;
+		this->_armor_damage_reduction = op._armor_damage_reduction;
+	}
+	return *this;
+}
+
+FragTrap::~FragTrap()
+{
+	std::cout << "TRAVAIL TERMINER" << std::endl;
+}
 
 FragTrap::FragTrap(std::string name)
 {
@@ -61,9 +84,4 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 		std::cout << _name << " Attaque " << Attack[random] << " Il occasionne " << Damage[random] << " à " << target << "\n" << std::endl;
 	else
 		std::cout << "J'ai plus d'energie faut que je me recharge\n" << std::endl;
-}
-
-FragTrap::~FragTrap()
-{
-	std::cout << "TRAVAIL TERMINER" << std::endl;
 }
