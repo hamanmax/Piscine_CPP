@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 13:21:04 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 11:51:57 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/21 18:04:12 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ Fixed::~Fixed(){}
 Fixed & Fixed::operator=(Fixed const & op)
 {
 	if (this != &op)
-	{
 		this->nb = op.nb;
-	}
 	return *this;
 }
 

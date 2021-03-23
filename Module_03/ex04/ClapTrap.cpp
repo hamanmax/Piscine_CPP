@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:34:17 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 18:39:50 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 17:09:06 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ClapTrap::~ClapTrap()
 }
 
 
-ClapTrap::ClapTrap(std::string name,int hp,uint mhp,int ep, uint mep,int level,int md,int rd,int adr): _name(name), _hit_point(hp), _max_hit_point(mhp), _energy_point(ep),_max_energy_point(mep),_level(level), _melee_damage(md),_ranged_damage(rd),_armor_damage_reduction(adr)
+ClapTrap::ClapTrap(std::string name,int hp,unsigned int mhp,int ep, unsigned int mep,int level,int md,int rd,int adr): _name(name), _hit_point(hp), _max_hit_point(mhp), _energy_point(ep),_max_energy_point(mep),_level(level), _melee_damage(md),_ranged_damage(rd),_armor_damage_reduction(adr)
 {
 	std::cout << "\n\n\nINITIALISATION DU MODULE DE CREATION DE ROBOT\n\n\n" << std::endl;
 }

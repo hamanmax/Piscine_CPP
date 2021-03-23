@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 11:08:26 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 18:43:16 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 17:05:35 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ NinjaTrap & NinjaTrap::operator=(NinjaTrap const & op)
 }
 
 NinjaTrap::~NinjaTrap(){}
-
 
 // const int NinjaTrap::getNinjaHitPoint() const
 // {

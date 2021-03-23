@@ -6,12 +6,15 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:50:19 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:49:13 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 17:33:05 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 FragTrap::FragTrap(){}
 

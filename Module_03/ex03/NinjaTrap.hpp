@@ -6,14 +6,18 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 10:18:04 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:55:43 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 17:27:35 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef NINJATRAP_HPP
 #define NINJATRAP_HPP
 #include <iostream>
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
+#include "NinjaTrap.hpp"
+
 
 class NinjaTrap: public ClapTrap
 {
@@ -28,6 +32,9 @@ public:
 	NinjaTrap(std::string name);
 	
 	void ninjaShoebox(ClapTrap & box);
+	void ninjaShoebox(ScavTrap & box);
+	void ninjaShoebox(FragTrap & box);
+	void ninjaShoebox(NinjaTrap & box);
 };
 
 #endif

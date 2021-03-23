@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:34:17 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:45:03 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 17:38:03 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "\n\n\nINITIALISATION DU MODULE DE CREATION DE ROBOT\n\n\n" << std::endl;
+	std::cout << "\nINITIALISATION DU MODULE DE CREATION DE ROBOT\n" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap & cp){*this = cp;}

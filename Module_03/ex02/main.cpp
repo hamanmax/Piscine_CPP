@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 11:28:18 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 10:00:12 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 18:25:29 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,31 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
+void Norbert()
+{
+	std::cout << "\n###\tCreation de Norbert\t###\n" << std::endl;
+	ScavTrap Norbert("Norbert");
+	std::cout << "\n###\tDestruction des Norbert\t###\n" << std::endl;
+}
+
+void M4CH1N3()
+{
+	std::cout << "\n###\tCreation de M4CH1N3\t###\n" << std::endl;
+	FragTrap M4CH1N3("M4CH1N3");
+
+	M4CH1N3.vaulthunter_dot_exe("Denver le dernier dinosaure");
+	M4CH1N3.vaulthunter_dot_exe("Denver le dernier dinosaure");
+	M4CH1N3.vaulthunter_dot_exe("Denver le dernier dinosaure");
+	M4CH1N3.vaulthunter_dot_exe("Denver le dernier dinosaure");
+	M4CH1N3.vaulthunter_dot_exe("Denver le dernier dinosaure");
+	std::cout << "\n###\tDestruction des ClapTrap\t###\n" << std::endl;
+	
+}
+
 int main(void)
 {
 	srand(time(NULL));
-	//ClapTrap Terminator = ClapTrap("T_001");
-	ScavTrap Terminator = ScavTrap("T_001");
-
-	//ScavTrap Terminator02("T_0002");
-	//ScavTrap Terminator03("T_0003");
-	std::string target = "Oui-Oui";
-
-	//Terminator.meleeAttack(target);
-	//Terminator.rangedAttack(target);
-	//Terminator.vaulthunter_dot_exe(target);
-	//Terminator.vaulthunter_dot_exe(target);
-	//Terminator.vaulthunter_dot_exe(target);
-	//Terminator.vaulthunter_dot_exe(target);
-	//Terminator.takeDamage(5);
-	//Terminator.takeDamage(-8);
-	//Terminator.takeDamage(0);
-	//Terminator.takeDamage(20);
-	//Terminator.takeDamage(25);
-	//Terminator.takeDamage(69);
-	//Terminator.beRepaired(69);
-	//Terminator.beRepaired(3);
-	//Terminator.beRepaired(-8);
-	Terminator.challengeNewcomer();
+	Norbert();
+	M4CH1N3();
 	return 0;
 }
