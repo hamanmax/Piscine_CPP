@@ -1,26 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/19 11:28:18 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 18:28:43 by mhaman           ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef MAIN_HPP
+#define MAIN_HPP
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
-#include "NinjaTrap.hpp"
-#include "SuperTrap.hpp"
-
-int main(void)
+class main : virtual public 
 {
-	srand(time(NULL));
-	SuperTrap DeadMachine("LAMAURE"); 
+	private:
+		/*Arg*/
+	protected:
+		/*Arg*/
+	public:
+		main();
+		main(const main & copy);
+		main & operator=(const main & op);
+		~main();
+};
 
-	DeadMachine.takeDamage(100);
-	return 0;
+main::main(){}
+
+main::main(){}
+
+main::main(const main & copy){*this = copy;}
+
+main & main::operator=(const main & op){
 }
+
+main::~main(){}
+
+#endif
