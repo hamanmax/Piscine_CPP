@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 16:07:33 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 17:39:26 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 15:01:26 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,12 @@ Weapon::Weapon()
 {
 }
 
-std::string Weapon::getType()
+std::string Weapon::getType()const 
 {
-	std::cout << _type << std::endl;
-	return(_type);
+	return(this->_type);
 }
 
 void Weapon::setType(std::string str)
 {
-	_type = str;
+	this->_type = str;
 }

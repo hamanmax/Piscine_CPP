@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 15:55:58 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 18:11:58 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 15:01:07 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Weapon.hpp"
 #include "HumanB.hpp"
 
-int main(int argc, char const *argv[])
+int main()
 {
 	{
 		Weapon club = Weapon("crude spiked club");

@@ -6,14 +6,14 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 13:21:04 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/21 18:04:12 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 17:33:14 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <cmath>
 
-Fixed::Fixed(/* args */){nb = 0;}
+Fixed::Fixed(/* args */){_nb = 0;}
 
 Fixed::Fixed(const Fixed &c){*this = c;}
 
@@ -22,21 +22,21 @@ Fixed::~Fixed(){}
 Fixed & Fixed::operator=(Fixed const & op)
 {
 	if (this != &op)
-		this->nb = op.nb;
+		this->_nb = op._nb;
 	return *this;
 }
 
 Fixed::Fixed(const float fl)
 {
-	float nbr = (fl);
-	this->nb = nbr;
+	float nbr = fl;
+	this->_nb = nbr;
 	nbr *= 256;
-	nb = nbr;
+	_nb = nbr;
 }
 
 Fixed::Fixed(const int nbr)
 {
-	nb = nbr << i;
+	_nb = nbr << _i;
 }
 
 int Fixed::toInt()const {return(int)(roundf(toFloat()));}
@@ -49,13 +49,13 @@ std::ostream& operator<<(std::ostream& os, const Fixed& dt)
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)(nb / (float)(1 << Fixed::i)));
+	return ((float)(_nb / (float)(1 << _i)));
 }
 
 int Fixed::getRawBits(void)const {
-	return(nb);
+	return(_nb);
 }
 
 void Fixed::setRawBits(const int raw){
-	nb = raw;
+	_nb = raw;
 }

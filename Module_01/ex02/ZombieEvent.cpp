@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 17:16:13 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 11:24:23 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 13:50:19 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 #include "ZombieEvent.hpp"
 #include "Zombie.hpp"
 
-ZombieEvent::ZombieEvent(/* args */){}
+ZombieEvent::ZombieEvent(/* args */){
+	std::cout << "Creation De L'événement\n" << std::endl;
+}
 
-ZombieEvent::~ZombieEvent(){}
+ZombieEvent::~ZombieEvent(){
+	std::cout << "Suppression De L'événement\n" << std::endl;
+}
 
 void ZombieEvent::setZombieType(std::string zombietype){type = zombietype;}
 
@@ -28,7 +32,7 @@ Zombie * ZombieEvent::newZombie(std::string name)
 
 void ZombieEvent::announce(std::string name,std::string type)
 {
-	std::cout << "Hey I am " << name << " Zombie of type " << type << "... BRAINSSSS" << std::endl;
+	std::cout << "Hey I am " << name << " Zombie of type " << type << "... BRAINSSSS\n" << std::endl;
 }
 
 void ZombieEvent::randomChump()

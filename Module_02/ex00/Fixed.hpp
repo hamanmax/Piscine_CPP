@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 13:35:37 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/21 17:59:13 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 17:14:19 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 class Fixed
 {
 private:
-	int nb;
-	static const int i = 8; 
+	int _nb;
+	static const int _i = 8; 
 public:
 	Fixed();
 	Fixed(const Fixed &c);

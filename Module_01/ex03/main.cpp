@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:07:13 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 12:47:21 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 14:12:32 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ void ZombieHordOnHeap()
 
 	std::cout <<"ENTREE DANS LA FONCTION HEAP\n" << std::endl;
 	Zhorde->announce();
-
 	delete Zhorde;
 }
-int main(int argc, char const *argv[])
+int main()
 {
 	srand(time(NULL));
 	ZombieHordOnTheStack();

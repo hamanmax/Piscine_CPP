@@ -6,14 +6,14 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:48:17 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/17 15:35:11 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/23 14:25:55 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 #include "Human.hpp"
 
-int main(int argc, char const *argv[])
+int main()
 {
 	Human test;
 
