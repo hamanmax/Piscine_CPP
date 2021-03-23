@@ -6,12 +6,16 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:29:28 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:53:13 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 17:37:16 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
 
 ScavTrap::ScavTrap(){
 	std::cout << "\nDestruction en cours de "<< this->_name << "\n"<< std::endl;
@@ -31,6 +35,7 @@ ScavTrap & ScavTrap::operator=(const ScavTrap & op)
 		this->_melee_damage = op._melee_damage;
 		this->_ranged_damage = op._ranged_damage;
 		this->_armor_damage_reduction = op._armor_damage_reduction;
+		this->_level = op._level;
 	}
 	return *this;
 }
@@ -45,6 +50,7 @@ ScavTrap::ScavTrap(std::string name)
 	this->_melee_damage = 30;
 	this->_ranged_damage = 20;
 	this->_armor_damage_reduction = 5;
+	this->_level = 1;
 	std::cout << "Hello Je suis " << name << " Droide de porte level " << _level << " Pour vous servir !\n" << std::endl;
 }
 

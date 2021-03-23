@@ -6,12 +6,15 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:29:28 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:17:12 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 17:14:44 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include <iostream>
+#include <string>
+#include <cstdlib>
 
 ScavTrap::ScavTrap(){}
 
@@ -130,7 +133,7 @@ void ScavTrap::challengeNewcomer()
 		{
 			std::cout << "choisit un nombre : ";
 			getline(std::cin,playerchoice);
-			playernb = std::atoi(playerchoice.c_str());
+			playernb = atoi(playerchoice.c_str());
 			if (mysterynb > playernb)
 				std::cout << "C'est plus" << std::endl;
 			else if (mysterynb < playernb)

@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 11:02:50 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 18:43:57 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 17:18:54 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@ public:
 	SuperTrap(std::string name);
 };
 
-SuperTrap::SuperTrap(/* args */)
-{
-}
-
 SuperTrap::SuperTrap(SuperTrap const & copy){*this = copy;}
 
 SuperTrap & SuperTrap::operator=(SuperTrap const & op)
@@ -40,6 +36,7 @@ SuperTrap & SuperTrap::operator=(SuperTrap const & op)
 	if (this != &op)
 	{
 		this->_name = op._name;
+		this->_level =op._level;
 		this->_hit_point = op._hit_point;
 		this->_max_hit_point = op._max_hit_point;
 		this->_energy_point = op._energy_point;

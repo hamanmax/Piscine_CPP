@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:29:28 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:41:36 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 18:18:03 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,14 @@ ScavTrap & ScavTrap::operator=(const ScavTrap & op)
 }
 
 ScavTrap::~ScavTrap(){
-	std::cout << "\nDestruction en cours de "<< this->_name << "\n"<< std::endl;
+	std::cout << this->_name << " Le porteur de porte a la bene" << std::endl;
 };
 
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name):ClapTrap(100,100,100,100,1,name,30,20,5)
 {
 	std::cout << "Initialisation de " << name << " En cours Veuilliez Patientez Cette construction peut durer " << (rand() % 10000) << " ans\n" << std::endl;
-	this->_name = name;
-	this->_hit_point = this->_max_hit_point = this->_energy_point = this->_max_energy_point = 100;
-	this->_melee_damage = 30;
-	this->_ranged_damage = 20;
-	this->_armor_damage_reduction = 5;
-	std::cout << "Hello Je suis " << name << " Droide de porte level " << _level << " Pour vous servir !\n" << std::endl;
+	std::cout << "Hello Je suis " << name << " Droide de porte level " << this->_level << " Pour vous servir !\n" << std::endl;
 }
 
 void ScavTrap::challengeNewcomer()

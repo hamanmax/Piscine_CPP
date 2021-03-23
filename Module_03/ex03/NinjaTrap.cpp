@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 11:01:53 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:59:10 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 17:34:42 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,10 @@ NinjaTrap::NinjaTrap(std::string name)
 
 void NinjaTrap::ninjaShoebox(ClapTrap & box)
 {
-	
+	box.takeDamage(25);
+}
+void NinjaTrap::ninjaShoebox(ScavTrap & box)
+{
+	std::cout << _name << "le ninja sort d'une boite a chaussure bizarre un lance-roquets et attaque \n" << std::endl;
+	box.takeDamage(60);
 }

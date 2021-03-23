@@ -6,12 +6,13 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:50:19 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 17:08:53 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/22 17:22:41 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
+#include <cstdlib>
 
 FragTrap::FragTrap(){}
 
@@ -43,7 +44,6 @@ FragTrap::~FragTrap()
 FragTrap::FragTrap(std::string name):ClapTrap(name,100,100,100,100,1,30,20,5)
 {
 	std::cout << "Initialisation de " << name << " En cours Veuilliez Patientez Cette construction peut durer " << (rand() % 10000) << " ans\n" << std::endl;
-	std::cout << "Hello Je suis " << name << " Droide de combat level " << _level << " Pour vous servir !\n" << std::endl;
 }
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target)
