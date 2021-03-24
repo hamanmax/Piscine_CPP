@@ -5,19 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/20 11:08:26 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/22 17:05:35 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/03/20 11:01:53 by mhaman            #+#    #+#             */
+/*   Updated: 2021/03/24 16:26:35 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
 
-NinjaTrap::NinjaTrap(){}
+NinjaTrap::NinjaTrap():ClapTrap(60,60,120,120,1,0,60,5,0){}
 
-NinjaTrap::NinjaTrap(NinjaTrap const  & cp)
-{*this = cp;}
+NinjaTrap::NinjaTrap(const NinjaTrap & cp){*this = cp;}
 
-NinjaTrap & NinjaTrap::operator=(NinjaTrap const & op)
+NinjaTrap & NinjaTrap::operator=(const NinjaTrap & op)
 {
 	if (this != &op)
 	{
@@ -33,18 +32,33 @@ NinjaTrap & NinjaTrap::operator=(NinjaTrap const & op)
 	return *this;
 }
 
-NinjaTrap::~NinjaTrap(){}
+NinjaTrap::~NinjaTrap()
+{
+	std::cout << "Une boule de fumee epaisse aparait et " << this->_name << " disparait" << std::endl;
+}
 
-// const int NinjaTrap::getNinjaHitPoint() const
-// {
-// 	return(this->_hit_point);
-// }
-
-NinjaTrap::NinjaTrap(std::string name):ClapTrap(name,60,60,120,120,1,60,5,0){}
+NinjaTrap::NinjaTrap(std::string name):ClapTrap(60,60,120,120,1,name,60,5,0)
+{
+	std::cout << " Creation en cours d'un .... NINJAAAAA prenomme " << this->_name << std::endl;
+}
 
 void NinjaTrap::ninjaShoebox(ClapTrap & box)
 {
-	box.takeDamage(8);
+	std::cout << this->_name << "le ninja sort d'une boite a chaussure bizarre une boite de chaussure bizarre " << std::endl;
+	box.takeDamage(20);
 }
-
-
+void NinjaTrap::ninjaShoebox(ScavTrap & box)
+{
+	std::cout << this->_name << " le ninja sort d'une boite a chaussure bizarre une porte geante et attaque " << box.get_name() << std::endl;
+	box.takeDamage(40);
+}
+void NinjaTrap::ninjaShoebox(FragTrap & box)
+{
+	std::cout << this->_name << " le ninja sort d'une boite a chaussure bizarre un Lance Rocket et attaque " << box.get_name() << std::endl;
+	box.takeDamage(40);
+}
+void NinjaTrap::ninjaShoebox(NinjaTrap & box)
+{
+	std::cout << this->_name << " le ninja sort d'une boite a chaussure bizarre un Kunai et un Shuriken et attaque \n" << box.get_name() << std::endl;
+	box.takeDamage(40);
+}

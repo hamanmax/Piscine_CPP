@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:59:55 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:46:09 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 15:57:47 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,16 @@ public:
 	ClapTrap(const ClapTrap & cp);
 	ClapTrap & operator=(const ClapTrap & op);
 	~ClapTrap();
+
+	ClapTrap(int hp,unsigned int mhp,int ep,unsigned int mep,int level,std::string name,int md,int rd,int adr);
 	
 	void	rangedAttack(std::string const & target);
 	void	meleeAttack(std::string const & target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
+	void	rangedAttack(std::string const & target, std::string const & AttackerType);
+	void	meleeAttack(std::string const & target, std::string const & AttackerType);
+	std::string get_name()const ;
 };
 
 #endif

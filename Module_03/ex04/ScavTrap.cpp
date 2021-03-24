@@ -6,25 +6,23 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:29:28 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/22 17:14:44 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 16:10:45 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-#include <iostream>
-#include <string>
-#include <cstdlib>
 
-ScavTrap::ScavTrap(){}
+ScavTrap::ScavTrap():ClapTrap(100,100,50,50,1,0,20,15,3){}
 
-ScavTrap::ScavTrap(ScavTrap const  & cp){*this = cp;}
+ScavTrap::ScavTrap(const ScavTrap & cp){*this = cp;}
 
-ScavTrap & ScavTrap::operator=(ScavTrap const & op)
+ScavTrap & ScavTrap::operator=(const ScavTrap & op)
 {
 	if (this != &op)
 	{
 		this->_name = op._name;
+		this->_level = op._level;
 		this->_hit_point = op._hit_point;
 		this->_max_hit_point = op._max_hit_point;
 		this->_energy_point = op._energy_point;
@@ -37,24 +35,20 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & op)
 }
 
 ScavTrap::~ScavTrap(){
-	std::cout << "\nDestruction en cours de "<< this->_name << "\n"<< std::endl;
+	std::cout << this->_name << " Le porteur de porte a la bene" << std::endl;
 };
 
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name):ClapTrap(100,100,50,50,1,name,20,15,3)
 {
 	std::cout << "Initialisation de " << name << " En cours Veuilliez Patientez Cette construction peut durer " << (rand() % 10000) << " ans\n" << std::endl;
-	this->_name = name;
-	this->_hit_point = this->_max_hit_point = this->_energy_point = this->_max_energy_point = 100;
-	this->_melee_damage = 30;
-	this->_ranged_damage = 20;
-	this->_armor_damage_reduction = 5;
-	std::cout << "Hello Je suis " << name << " Droide de porte level " << _level << " Pour vous servir !\n" << std::endl;
+	std::cout << "Hello Je suis " << name << " Droide de porte level " << this->_level << " Pour vous servir !\n" << std::endl;
 }
+
 
 void ScavTrap::challengeNewcomer()
 {
-	std::cout << "Bonjour Voyageur Je suis " << _name << ". Avant de pourvoir rentrer dans ce repere machiavelique super secret tu doit d'abord reussir ce challenge\n" << std::endl;
+	std::cout << "Bonjour Voyageur Je suis " << this->_name << ". Avant de pourvoir rentrer dans ce repère machiavelique super secret tu doit d'abord reussir ce challenge\n" << std::endl;
 	int mg = rand() % 4;
 	if (mg == 0)
 	{
@@ -107,7 +101,7 @@ void ScavTrap::challengeNewcomer()
 		{
 			int choice = rand() % 3;
 			std::cout << "Bienvenue dans cette partie de Pierre Feuille Ciseaux\nChoisit ton coup Pierre/Feuille/Ciseaux :";
-			getline(std::cin, playerchoice);
+			getline(std::cin,playerchoice);
 			std::cout << "\n* LA TENSION S'INTENSIFIE *\n" << std::endl;
 			std::cout << _name << " a choisit " << headup[choice] << " L'inconnu a choisit " << playerchoice << std::endl;
 			if ((headup[choice] == "Feuille" && playerchoice == "Ciseaux") || (headup[choice] == "Pierre" && playerchoice == "Feuille") || (headup[choice] == "Ciseaux" && playerchoice == "Pierre"))
@@ -133,7 +127,7 @@ void ScavTrap::challengeNewcomer()
 		{
 			std::cout << "choisit un nombre : ";
 			getline(std::cin,playerchoice);
-			playernb = atoi(playerchoice.c_str());
+			playernb = std::atoi(playerchoice.c_str());
 			if (mysterynb > playernb)
 				std::cout << "C'est plus" << std::endl;
 			else if (mysterynb < playernb)

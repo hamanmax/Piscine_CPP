@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:59:55 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/22 17:44:40 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 14:38:36 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ public:
 	void	meleeAttack(std::string const & target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
+	void	rangedAttack(std::string const & target, std::string const & AttackerType);
+	void	meleeAttack(std::string const & target, std::string const & AttackerType);
 };
 
 #endif

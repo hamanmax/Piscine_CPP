@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 13:52:10 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 12:41:27 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 15:17:19 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ClapTrap.hpp"
 
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public :
 	ScavTrap();

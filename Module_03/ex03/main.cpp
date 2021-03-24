@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 11:28:18 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/22 17:35:14 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 16:43:29 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,101 @@
 #include <cstdlib>
 #include <ctime>
 
+void test_ScavTrap(ScavTrap & ref)
+{
+	std::cout << "Test de prise de dégats en cours\n" << std:: endl;
+	ref.takeDamage(2);
+	ref.takeDamage(5);
+	ref.takeDamage(8);
+	ref.takeDamage(27);
+	ref.takeDamage(35);
+	ref.takeDamage(258);
+	ref.takeDamage(-2);
+
+	std::cout << "Fin des dégats maintenant on se répare \n" << std:: endl;
+
+	ref.beRepaired(10);
+	ref.beRepaired(25);
+	ref.beRepaired(25);
+	ref.beRepaired(60);
+	ref.beRepaired(-12);
+	ref.beRepaired(4568);
+
+	std::cout << "Petit Mix claque dans la gueule / laser boum boum\n" << std:: endl;
+	ref.meleeAttack("La Panthère rose");
+	ref.rangedAttack("La Panthère rose");
+	ref.meleeAttack("La Panthère rose","Scav");
+	ref.rangedAttack("La Panthère rose","Scav");
+
+	std::cout << "Maintenant Place A La Technique Speciale De La Mort Qui Tue\n" << std:: endl;
+
+	ref.challengeNewcomer();
+	ref.challengeNewcomer();
+	ref.challengeNewcomer();
+
+	std::cout << "Fin de la demonstration nous vous remercions de votre visite dans notre centre de R&D\n" << std:: endl;
+	std::cout << "Skynet Enterprise\n" << std:: endl;
+}
+
+void test_FragTrap(FragTrap & ref)
+{
+	std::cout << "Test de prise de dégats en cours\n" << std:: endl;
+
+	ref.takeDamage(2);
+	ref.takeDamage(5);
+	ref.takeDamage(8);
+	ref.takeDamage(27);
+	ref.takeDamage(35);
+	ref.takeDamage(258);
+	ref.takeDamage(-2);
+
+	std::cout << "Fin des dégats maintenant on se répare \n" << std:: endl;
+
+	ref.beRepaired(10);
+	ref.beRepaired(25);
+	ref.beRepaired(25);
+	ref.beRepaired(60);
+	ref.beRepaired(-12);
+	ref.beRepaired(4568);
+
+	std::cout << "Petit Mix claque dans la gueule / laser boum boum\n" << std:: endl;
+	ref.meleeAttack("Oui-Oui");
+	ref.rangedAttack("Oui-Oui");
+	ref.meleeAttack("Oui-Oui","Frag");
+	ref.rangedAttack("Oui-Oui","Frag");
+
+	std::cout << "Maintenant Place A La Technique Speciale De La Mort Qui Tue\n" << std:: endl;
+
+	ref.vaulthunter_dot_exe("Oui-Oui");
+	ref.vaulthunter_dot_exe("Oui-Oui");
+	ref.vaulthunter_dot_exe("Oui-Oui");
+	ref.vaulthunter_dot_exe("Oui-Oui");
+	ref.vaulthunter_dot_exe("Oui-Oui");
+
+
+	std::cout << "Fin de la demonstration nous vous remercions de votre visite dans notre centre de R&D\n" << std:: endl;
+	std::cout << "Skynet Enterprise\n" << std:: endl;
+}
+
 int main(void)
 {
 	srand(time(NULL));
-	NinjaTrap Terminator = NinjaTrap("Gaiden");
-	ScavTrap Invocation = ScavTrap("tutu");
-	std::string target = "Oui-Oui";
+	ClapTrap Boite;
+	FragTrap Terminator("T-2000");
+	ScavTrap Portenator("T-0002");
+	NinjaTrap Ninjanator("T-Gaiden");
+	std::cout << "Test de Frag en cours" << std::endl;
+	test_FragTrap(Terminator);
+	std::cout << "Test de Scav" << std::endl;
+	test_ScavTrap(Portenator);
+	std::cout << "Test rajouter de Ninja" << std::endl;
 
-	Terminator.ninjaShoebox(Invocation);
+	Ninjanator.ninjaShoebox(Terminator);
+	Ninjanator.ninjaShoebox(Portenator);
+	Ninjanator.ninjaShoebox(Boite);
+	Ninjanator.ninjaShoebox(Ninjanator);
+
+	Ninjanator.meleeAttack("Oui-Oui","Ninja");
+	Ninjanator.rangedAttack("Oui-Oui","Ninja");
 	return 0;
 }

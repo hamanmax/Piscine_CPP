@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 11:02:50 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/22 17:18:54 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 17:17:19 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 
-class SuperTrap :  public NinjaTrap,  public FragTrap
+class SuperTrap : virtual public NinjaTrap, virtual public FragTrap
 {
 private:
 	/* data */
@@ -27,8 +27,18 @@ public:
 	~SuperTrap();
 
 	SuperTrap(std::string name);
+
+	void	rangedAttack(std::string const & target);
+	void	meleeAttack(std::string const & target);
 };
 
+void SuperTrap::rangedAttack(std::string const & target){
+	return(ClapTrap::rangedAttack(target,"Frag"));
+}
+
+void SuperTrap::meleeAttack(std::string const & target){
+	return(ClapTrap::meleeAttack(target,"Ninja"));
+}
 SuperTrap::SuperTrap(SuperTrap const & copy){*this = copy;}
 
 SuperTrap & SuperTrap::operator=(SuperTrap const & op)
@@ -48,19 +58,18 @@ SuperTrap & SuperTrap::operator=(SuperTrap const & op)
 	return *this;
 }
 
-SuperTrap::~SuperTrap()
+SuperTrap::SuperTrap():ClapTrap(100,100,120,120,1,"empty",60,20,5), NinjaTrap("empty"),FragTrap("empty")
 {
+	std::cout << "Creation D'un SuperTrap Pour de Super Resultat Pour ramener la terre dans un Super etat" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string name):ClapTrap(), NinjaTrap(name),FragTrap(name)
+SuperTrap::~SuperTrap()
 {
-	this->_name = name; 
-	this->_hit_point = this->_max_hit_point = 100;
-	this->_energy_point = this->_max_energy_point = 120;
-	this->_melee_damage = 60;
-	this->_ranged_damage = 20;
-	this->_armor_damage_reduction = 5;
-	this->_level = 1;
+	std::cout << "Destruction d'un SuperTrap [...] la terr[...]ible etat" << std::endl;
+}
+SuperTrap::SuperTrap(std::string name):ClapTrap(100,100,120,120,1,name,60,20,5), NinjaTrap(name),FragTrap(name)
+{
+	std::cout << "Creation D'un SuperTrap Pour de Super Resultat Pour ramener la terre dans un Super etat" << std::endl;
 }
 
 

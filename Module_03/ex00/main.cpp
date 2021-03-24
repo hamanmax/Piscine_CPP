@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 11:28:18 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/22 20:38:59 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 12:34:57 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <cstdlib>
 #include <ctime>
 
-int main(void)
+int main()
 {
 	srand(time(NULL));
 	FragTrap Terminator("T-2000");

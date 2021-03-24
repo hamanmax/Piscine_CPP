@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 13:52:10 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/20 13:17:08 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/24 16:45:30 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 #include "ClapTrap.hpp"
 
 
-class ScavTrap : virtual public ClapTrap
+class ScavTrap :virtual public ClapTrap
 {
 	public :
-	ScavTrap(std::string name);
-	ScavTrap(ScavTrap const  & cp);
 	ScavTrap();
-	ScavTrap & operator=(ScavTrap const & op);
+	ScavTrap(const ScavTrap & cp);
+	ScavTrap & operator=(const ScavTrap & op);
 	~ScavTrap();
+
+	ScavTrap(std::string name);
 	
 	void	challengeNewcomer();
 };
