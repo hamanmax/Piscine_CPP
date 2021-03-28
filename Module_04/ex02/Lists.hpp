@@ -60,7 +60,6 @@ void Lists::del(Lists ** head_ref)
 {
 	Lists *tmp;
 	Lists *ptr = *head_ref;
-
 	while (ptr)
 	{
 		tmp = ptr->_next;

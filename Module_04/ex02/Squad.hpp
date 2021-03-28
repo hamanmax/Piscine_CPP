@@ -44,11 +44,13 @@ int Squad::push(ISpaceMarine* SP){
 }
 
 Squad::Squad():_size(0){
-	_squad = new Lists;
+	this->_squad = new Lists;
+	std::cout << this->_squad << "ICI" << std::endl;
 }
 
 Squad::Squad(Squad const & copy){
 	this->_squad = new Lists;
+	std::cout << this->_squad;
 	for (int i = 0;i < copy.getCount();i++)
 	{
 		ISpaceMarine * tutu = copy.getUnit(i)->clone();
@@ -60,7 +62,6 @@ Squad::Squad(Squad const & copy){
 Squad & Squad::operator=(Squad const & op){
 	if (this->getCount() > 0)
 		this->dellist();
-	this->_squad = new Lists;
 	for (int i = 0;i < op.getCount();i++)
 	{
 		ISpaceMarine * tutu = op.getUnit(i)->clone();
@@ -72,6 +73,7 @@ Squad & Squad::operator=(Squad const & op){
 
 Squad::~Squad(){
 	this->dellist();
+	//delete this->_squad;
 }
 
 #endif

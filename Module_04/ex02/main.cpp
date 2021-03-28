@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 14:21:32 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/28 07:58:51 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 09:28:49 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ vlc->push(bob);
 vlc->push(jim);
 Squad tmc;
 tmc = *vlc;
-for (int i = 0; i < tmc.getCount(); ++i)
+for (int i = 0; i < vlc->getCount(); ++i)
 {
-ISpaceMarine* cur = tmc.getUnit(i);
+ISpaceMarine* cur = vlc->getUnit(i);
 cur->battleCry();
 cur->rangedAttack();
 cur->meleeAttack();
