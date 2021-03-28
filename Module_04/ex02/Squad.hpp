@@ -2,6 +2,7 @@
 #define SQUAD_HPP
 #include "ISquad.hpp"
 #include "Lists.hpp"
+#include "iostream"
 
 class Squad : virtual public ISquad
 {
@@ -18,6 +19,7 @@ class Squad : virtual public ISquad
 		int getCount() const;
 		ISpaceMarine * getUnit(int N)const ;
 		int push(ISpaceMarine*);
+		void dellist();
 };
 
 int Squad::getCount()const {
@@ -31,6 +33,10 @@ ISpaceMarine * Squad::getUnit(int N)const {
 	return(node->getMarine());
 }
 
+void Squad::dellist(){
+	this->_squad->del(&this->_squad);
+}
+
 int Squad::push(ISpaceMarine* SP){
 	this->_squad->push(&this->_squad,SP);
 	this->_size = this->_squad->get_size();
@@ -41,14 +47,31 @@ Squad::Squad():_size(0){
 	_squad = new Lists;
 }
 
-Squad::Squad(Squad const & copy){*this = copy;}
+Squad::Squad(Squad const & copy){
+	this->_squad = new Lists;
+	for (int i = 0;i < copy.getCount();i++)
+	{
+		ISpaceMarine * tutu = copy.getUnit(i)->clone();
+		this->push(tutu);
+	}
+	this->_size = copy._size;
+}
 
 Squad & Squad::operator=(Squad const & op){
+	if (this->getCount() > 0)
+		this->dellist();
+	this->_squad = new Lists;
+	for (int i = 0;i < op.getCount();i++)
+	{
+		ISpaceMarine * tutu = op.getUnit(i)->clone();
+		this->push(tutu);
+	}
 	this->_size = op._size;
-	this->_squad = op._squad;
 	return *this;
 }
 
-Squad::~Squad(){}
+Squad::~Squad(){
+	this->dellist();
+}
 
 #endif

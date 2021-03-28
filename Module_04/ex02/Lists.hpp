@@ -18,6 +18,7 @@ class Lists
 		~Lists();
 
 		void push(Lists ** head_ref, ISpaceMarine * data);
+		void del(Lists ** head_ref);
 		Lists *getNode(Lists *head_ref,int nb) const;
 		ISpaceMarine * getMarine();
 		size_t get_size()const ;
@@ -55,6 +56,20 @@ Lists * Lists::getNode(Lists *head_ref,int nb)const {
 	return node->_next;
 }
 
+void Lists::del(Lists ** head_ref)
+{
+	Lists *tmp;
+	Lists *ptr = *head_ref;
+
+	while (ptr)
+	{
+		tmp = ptr->_next;
+		delete ptr->_marine;
+		delete ptr;
+		ptr = tmp;
+	}
+}
+
 void Lists::push(Lists ** head_ref, ISpaceMarine * data){
 	Lists * new_node = new Lists();
 	Lists * last = *head_ref;
@@ -69,7 +84,6 @@ void Lists::push(Lists ** head_ref, ISpaceMarine * data){
 		last = last->_next;
 		if (last->_marine == data)
 		{
-			std::cout << last->_marine << std::endl;
 			delete new_node;
 			return;
 		}

@@ -16,7 +16,7 @@ class AssaultTerminator : virtual public ISpaceMarine
 		~AssaultTerminator();
 
 		ISpaceMarine * clone() const;
-		void battlecry() const;
+		void battleCry() const;
 		void rangedAttack() const;
 		void meleeAttack() const;
 };
@@ -35,7 +35,7 @@ AssaultTerminator::~AssaultTerminator(){
 	std::cout << "I'll be back..." << std::endl;
 }
 
-void AssaultTerminator::battlecry()const {
+void AssaultTerminator::battleCry()const {
 	std::cout << "This code is unclean. PURIFY IT!" << std::endl;
 }
 void AssaultTerminator::rangedAttack()const {
@@ -45,6 +45,7 @@ void AssaultTerminator::meleeAttack()const {
 	std::cout << "* attacks with chainfists *" << std::endl;
 }
 ISpaceMarine * AssaultTerminator::clone() const{
-	return NULL;
+	ISpaceMarine * cloned = new AssaultTerminator(*this);
+	return cloned;
 }
 #endif

@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 14:21:32 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/26 18:12:02 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/28 07:58:51 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,20 @@
 
 int main()
 {
-	int i;
-	ISpaceMarine *bob = new TacticalMarine;
-	ISpaceMarine *joe = new AssaultTerminator;
-	ISpaceMarine *jeanmi;
-	ISquad* vlc = new Squad;
-	//vlc->push(bob);
-	//vlc->push(joe);
-	//vlc->push(joe);
-	std::cout << vlc->getCount() << std::endl;
-	jeanmi = vlc->getUnit(0);
-	jeanmi->battlecry();
-	delete bob;
-	delete joe;
-	delete vlc;
+ISpaceMarine* bob = new TacticalMarine;
+ISpaceMarine* jim = new AssaultTerminator;
+Squad* vlc = new Squad;
+vlc->push(bob);
+vlc->push(jim);
+Squad tmc;
+tmc = *vlc;
+for (int i = 0; i < tmc.getCount(); ++i)
+{
+ISpaceMarine* cur = tmc.getUnit(i);
+cur->battleCry();
+cur->rangedAttack();
+cur->meleeAttack();
+}
+delete vlc;
+return 0;
 }
