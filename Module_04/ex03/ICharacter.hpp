@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 10:29:20 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/28 10:32:11 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:09:05 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include "AMateria.hpp"
 
-class ICharacter 
+class ICharacter
 {
 	private:
 		/*Arg*/
@@ -28,4 +28,5 @@ class ICharacter
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
 };
+
 #endif

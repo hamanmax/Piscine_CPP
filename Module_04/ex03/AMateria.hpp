@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 10:12:44 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/28 11:49:45 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/30 15:44:21 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,33 @@
 #define AMATERIA_HPP
 #include <iostream>
 #include "ICharacter.hpp"
-
 class AMateria 
 {
 	private:
-		AMateria();
 		unsigned int _xp;
 		std::string _type;
 	protected:
 		/*Arg*/
 	public:
+
+		AMateria(std::string const & type);
 		AMateria(AMateria const & copy);
 		AMateria & operator=(AMateria const & op);
-		virtual ~AMateria();
-
-		AMateria(std::string & type);
+		virtual ~AMateria(){}
 
 		std::string const & getType() const;
 		unsigned int getXP() const;
 		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter & target);
+		virtual void use(ICharacter& target);
 };
 
-AMateria::AMateria():_xp(0)_type(NULL){}
-
-AMateria::AMateria(AMateria const & copy){*this = copy;}
+AMateria::AMateria(AMateria const & copy):AMateria(copy._type){*this = copy;}
 
 AMateria & AMateria::operator=(AMateria const & op){
+	return *this;
 }
 
-AMateria::~AMateria(){}
+AMateria::AMateria(std::string & type):_type(type){}
 
 std::string const & AMateria::getType()const {
 	return(this->_type);
@@ -51,9 +48,8 @@ std::string const & AMateria::getType()const {
 unsigned int AMateria::getXP() const {
 	return(this->_xp);
 }
-void AMateria::use(ICharacter & target) {
-	target.use(0,target);
-	this->_xp += 10;
-}
+
+
+void AMateria::use(ICharacter& target){}
 
 #endif
