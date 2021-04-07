@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 10:38:18 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/28 10:39:47 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 15:30:12 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define IMATERIASOURCE_HPP
 #include "AMateria.hpp"
 
+class AMateria;
 class IMateriaSource 
 {
 	private:
@@ -21,7 +22,7 @@ class IMateriaSource
 	protected:
 		/*Arg*/
 	public:
-		virtual ~IMateriaSource(){}
+		virtual ~IMateriaSource(){};
 		virtual void learnMateria(AMateria*) = 0;
 		virtual AMateria* createMateria(std::string const & type) = 0;
 };

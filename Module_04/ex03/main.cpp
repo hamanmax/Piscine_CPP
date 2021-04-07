@@ -12,17 +12,20 @@
 
 int main()
 {
-	return(0);
-	ICharacter* jim = new Character("jim");
-
-	//IMateriaSource* src = new MateriaSource();
-	//src->learnMateria(new Ice());
-	//src->learnMateria(new Cure());
-//
-	//ICharacter* moi = new Character("moi");
-//
-	//AMateria* tmp;
-	//tmp = src->createMateria("ice");
-	//moi->equip(tmp);
-	//delete tmp;
+IMateriaSource* src = new MateriaSource();
+src->learnMateria(new Ice());
+src->learnMateria(new Cure());
+ICharacter* moi = new Character("moi");
+AMateria* tmp;
+tmp = src->createMateria("ice");
+moi->equip(tmp);
+tmp = src->createMateria("cure");
+moi->equip(tmp);
+ICharacter* bob = new Character("bob");
+moi->use(0, *bob);
+moi->use(1, *bob);
+delete bob;
+delete moi;
+delete src;
+return 0;
 }

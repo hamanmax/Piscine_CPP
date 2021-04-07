@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 15:27:14 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/30 15:28:39 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/04/05 17:20:01 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 class Ice: virtual public AMateria
 {
 	private:
-		Ice();
 		unsigned int _xp;
 		std::string _type;
 	protected:
 		/*Arg*/
 	public:
+		Ice();
 		Ice(const Ice & copy);
 		Ice & operator=(const Ice & op);
 		~Ice();
@@ -39,12 +39,19 @@ class Ice: virtual public AMateria
 
 Ice::~Ice(){}
 
+Ice::Ice():AMateria("ice"){}
+
 Ice::Ice(const Ice & copy):AMateria(copy.getType()){*this = copy;}
 
-Ice & Ice::operator=(const Ice & op){
+Ice & Ice::operator=(const Ice & op)
+{
+	this->_type = op._type;
+	this->_xp = op._xp;
+	return *this;
 }
 
-Ice::Ice(std::string type):AMateria(type){}
+Ice::Ice(std::string type):AMateria(type){
+}
 
 std::string const & Ice::getType() const{
 	return(this->_type);
@@ -53,10 +60,13 @@ unsigned int Ice::getXP() const{
 	return(this->_xp);
 }
 
-AMateria* Ice::clone() const {}
+AMateria* Ice::clone() const {
+	AMateria * clone = new Ice("ice");
+	return clone;
+}
 
 void Ice::use(ICharacter& target){
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << "\n";
 	_xp += 10;
 }
 

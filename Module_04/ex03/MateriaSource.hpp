@@ -3,10 +3,10 @@
 #include "IMateriaSource.hpp"
 #include "AMateria.hpp"
 
-class MateriaSource : public IMateriaSource
+class MateriaSource : virtual public IMateriaSource
 {
 	private:
-		IMateriaSource * Source[4];
+		AMateria * _source[4];
 	protected:
 		/*Arg*/
 	public:
@@ -20,19 +20,53 @@ class MateriaSource : public IMateriaSource
 
 };
 
-MateriaSource::MateriaSource(){}
+MateriaSource::MateriaSource(){
+	for(int i = 0; i < 4;i++)
+	{
+		this->_source[i] = NULL;
+	}
+}
 
-MateriaSource::~MateriaSource(){}
+MateriaSource::~MateriaSource(){
+	for (int i = 0; i < 4;i++)
+	{
+		if (this->_source[i] != NULL)
+			delete this->_source[i];
+	}
+}
 
 MateriaSource::MateriaSource(const MateriaSource & copy){*this = copy;}
 
 MateriaSource & MateriaSource::operator=(const MateriaSource & op){
+	for(int i = 0;i < 4;i++)
+	{
+		this->_source[i] = op._source[i];
+	}
+	return *this;
 }
 
-void MateriaSource::learnMateria(AMateria *m){}
+void MateriaSource::learnMateria(AMateria *m){
+	for (int i = 0;i < 4;i++)
+	{
+		if (this->_source[i] == NULL)
+		{
+			this->_source[i] = m;
+			return;
+		}
+	}
+}
 
 AMateria * MateriaSource::createMateria(std::string const & type){
-	
+	for (int i = 0;i < 4;i++)
+	{
+		if (this->_source[i]->getType() == type)
+		{
+			AMateria * copy = this->_source[i]->clone();
+			return copy;
+		}
+	}
+	std::cout << "Materia type is invalid" << "\n";
+	return (NULL);
 }
 
 #endif
