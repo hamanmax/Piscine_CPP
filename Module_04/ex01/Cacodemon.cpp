@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PowerFist.cpp                                      :+:      :+:    :+:   */
+/*   Cacodemon.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 17:23:36 by mhaman            #+#    #+#             */
-/*   Updated: 2021/04/12 17:23:43 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/04/12 17:16:17 by mhaman            #+#    #+#             */
+/*   Updated: 2021/04/12 17:16:50 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PowerFist.hpp"
+#include "Cacodemon.hpp"
 
-PowerFist::PowerFist():AWeapon("Power Fist",8,50){}
 
-PowerFist::PowerFist(const PowerFist & copy):AWeapon("Power Fist",8,50){*this = copy;}
+Cacodemon::Cacodemon():Enemy(180,"Cacodemon"){
+	std::cout << "* growl growl growl *" << std::endl;
+}
 
-PowerFist & PowerFist::operator=(const PowerFist & op){
+Cacodemon::Cacodemon(Cacodemon const & copy):Enemy(copy._hp,copy._type){*this = copy;}
+
+Cacodemon & Cacodemon::operator=(Cacodemon const & op){
 	if (this != &op)
 	{
-		this->_apcost = op._apcost;
-		this->_damage = op._damage;
-		this->_name = op._name;
+		this->_hp = op._hp;
+		this->_type = op._type;
 	}
 	return *this;
 }
 
-PowerFist::~PowerFist(){}
-
-void PowerFist::attack() const{
-	std::cout << "* pschhh... SBAM! *" << std::endl;
+Cacodemon::~Cacodemon(){
+	std::cout << " Orggggg..." << std::endl;
 }

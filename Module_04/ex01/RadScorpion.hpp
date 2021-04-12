@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 16:08:04 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/25 16:50:11 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 17:23:58 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,8 @@ class RadScorpion : virtual public Enemy
 		RadScorpion();
 		RadScorpion(RadScorpion const & copy);
 		RadScorpion & operator=(RadScorpion const & op);
-		~RadScorpion();
+		virtual ~RadScorpion();
 
 };
-
-RadScorpion::RadScorpion():Enemy(80,"RadScorpion"){
-	std::cout << "* click click click *" << std::endl;
-}
-
-RadScorpion::RadScorpion(RadScorpion const & copy):Enemy(80,"RadScorpion"){*this = copy;}
-
-RadScorpion & RadScorpion::operator=(RadScorpion const & op){
-	if (this != &op)
-	{
-		this->_hp = op._hp;
-		this->_type = op._type;
-	}
-	return *this;
-}
-
-RadScorpion::~RadScorpion(){
-	std::cout << "* SPROTCH *" << std::endl;
-}
-
 
 #endif

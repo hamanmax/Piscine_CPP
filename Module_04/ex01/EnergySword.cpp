@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.cpp                                    :+:      :+:    :+:   */
+/*   EnergySword.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 17:22:37 by mhaman            #+#    #+#             */
-/*   Updated: 2021/04/12 17:23:04 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/04/12 17:20:24 by mhaman            #+#    #+#             */
+/*   Updated: 2021/04/12 17:20:34 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PlasmaRifle.hpp"
+#include "EnergySword.hpp"
 
-PlasmaRifle::PlasmaRifle():AWeapon("Plasma Rifle",5,21){}
+EnergySword::EnergySword():AWeapon("Energy Sword",10,25){}
  
-PlasmaRifle::PlasmaRifle(PlasmaRifle const & copy):AWeapon(copy._name,copy._apcost,copy._damage){*this = copy;}
+EnergySword::EnergySword(EnergySword const & copy):AWeapon(copy._name,copy._apcost,copy._damage){*this = copy;}
 
-PlasmaRifle & PlasmaRifle::operator=(PlasmaRifle const & op){
+EnergySword & EnergySword::operator=(EnergySword const & op){
 	if (this != &op)
 	{
 		this->_apcost = op._apcost;
@@ -26,8 +26,8 @@ PlasmaRifle & PlasmaRifle::operator=(PlasmaRifle const & op){
 	return *this;
 }
 
-void PlasmaRifle::attack()const{
-std::cout << "* piouuu piouuu piouuu *" << std::endl;
+void EnergySword::attack()const{
+std::cout << "* Zwiff Zwiff Zwiff *" << std::endl;
 }
 
-PlasmaRifle::~PlasmaRifle(){}
+EnergySword::~EnergySword(){}

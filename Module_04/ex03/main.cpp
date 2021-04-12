@@ -1,31 +1,40 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include "AMateria.hpp"
-#include "Character.hpp"
-#include "ICharacter.hpp"
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
+#include "Character.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-
 int main()
 {
-IMateriaSource* src = new MateriaSource();
-src->learnMateria(new Ice());
-src->learnMateria(new Cure());
-ICharacter* moi = new Character("moi");
-AMateria* tmp;
-tmp = src->createMateria("ice");
-moi->equip(tmp);
-tmp = src->createMateria("cure");
-moi->equip(tmp);
-ICharacter* bob = new Character("bob");
-moi->use(0, *bob);
-moi->use(1, *bob);
-delete bob;
-delete moi;
-delete src;
-return 0;
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	Character * Jean = new Character("Jean");
+	Jean->equip(src->createMateria("ice"));
+	Jean->equip(src->createMateria("cure"));
+	Character Timmy("Timmy");
+	Timmy.equip(src->createMateria("ice"));
+	Timmy.equip(src->createMateria("ice"));
+	Timmy.use(0,*me);
+	Timmy.use(1,*me);
+	Timmy = *Jean;
+	Character Tim(Timmy);
+	me->use(0, *bob);
+	Timmy.use(1, *me);
+	me->unequip(1);
+	tmp->use(*bob);
+	Tim.use(1,*me);
+	delete Jean;
+	delete bob;
+	delete me;
+	delete src;
+	delete tmp;
+	return 0;
 }

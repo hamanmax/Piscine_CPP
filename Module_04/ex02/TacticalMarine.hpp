@@ -21,32 +21,4 @@ class TacticalMarine : virtual public ISpaceMarine
 		void meleeAttack() const;
 };
 
-TacticalMarine::TacticalMarine(){
-	std::cout << "Tactical Marine ready for battle!" << std::endl;
-}
-
-TacticalMarine::TacticalMarine(TacticalMarine const & copy){*this = copy;}
-
-TacticalMarine & TacticalMarine::operator=(TacticalMarine const & op){
-	return *this;
-}
-
-TacticalMarine::~TacticalMarine(){
-	std::cout << "Aaargh..." << std::endl;
-}
-
-void TacticalMarine::battleCry()const {
-	std::cout << "For the holy PLOT!" << std::endl;
-}
-void TacticalMarine::rangedAttack()const {
-	std::cout <<  "* attacks with a bolter *" << std::endl;
-}
-void TacticalMarine::meleeAttack()const {
-	std::cout <<  "* attacks with a chainsword *" << std::endl;
-}
-
-ISpaceMarine * TacticalMarine::clone() const{
-	ISpaceMarine * cloned = new TacticalMarine(*this);
-	return cloned;
-}
 #endif

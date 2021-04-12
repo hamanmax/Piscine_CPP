@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 09:57:37 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/27 14:10:42 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/04/12 17:34:41 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 class ISpaceMarine 
 {
-	private:
-		/*Arg*/
-	protected:
-		/*Arg*/
 	public:
 		virtual ~ISpaceMarine() {}
 		virtual ISpaceMarine * clone() const = 0;

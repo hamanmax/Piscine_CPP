@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.cpp                                    :+:      :+:    :+:   */
+/*   BigFuckingGun9000.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 17:22:37 by mhaman            #+#    #+#             */
-/*   Updated: 2021/04/12 17:23:04 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/04/12 17:15:22 by mhaman            #+#    #+#             */
+/*   Updated: 2021/04/12 17:15:39 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PlasmaRifle.hpp"
+#include "BigFuckingGun9000.hpp"
 
-PlasmaRifle::PlasmaRifle():AWeapon("Plasma Rifle",5,21){}
+BigFuckingGun9000::BigFuckingGun9000():AWeapon("BFG-9000",35,180){}
  
-PlasmaRifle::PlasmaRifle(PlasmaRifle const & copy):AWeapon(copy._name,copy._apcost,copy._damage){*this = copy;}
+BigFuckingGun9000::BigFuckingGun9000(BigFuckingGun9000 const & copy):AWeapon(copy._name,copy._apcost,copy._damage){*this = copy;}
 
-PlasmaRifle & PlasmaRifle::operator=(PlasmaRifle const & op){
+BigFuckingGun9000 & BigFuckingGun9000::operator=(BigFuckingGun9000 const & op){
 	if (this != &op)
 	{
 		this->_apcost = op._apcost;
@@ -26,8 +26,8 @@ PlasmaRifle & PlasmaRifle::operator=(PlasmaRifle const & op){
 	return *this;
 }
 
-void PlasmaRifle::attack()const{
-std::cout << "* piouuu piouuu piouuu *" << std::endl;
+void BigFuckingGun9000::attack()const{
+std::cout << "* Splarg Splarg Splarg *" << std::endl;
 }
 
-PlasmaRifle::~PlasmaRifle(){}
+BigFuckingGun9000::~BigFuckingGun9000(){}

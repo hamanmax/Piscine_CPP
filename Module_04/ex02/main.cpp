@@ -1,38 +1,44 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/26 14:21:32 by mhaman            #+#    #+#             */
-/*   Updated: 2021/03/28 09:28:49 by mhaman           ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
-
 #include "ISpaceMarine.hpp"
 #include "ISquad.hpp"
-#include "Squad.hpp"
 #include "TacticalMarine.hpp"
 #include "AssaultTerminator.hpp"
+#include "Squad.hpp"
 
 int main()
 {
-ISpaceMarine* bob = new TacticalMarine;
-ISpaceMarine* jim = new AssaultTerminator;
-Squad* vlc = new Squad;
-vlc->push(bob);
-vlc->push(jim);
-Squad tmc;
-tmc = *vlc;
-for (int i = 0; i < vlc->getCount(); ++i)
-{
-ISpaceMarine* cur = vlc->getUnit(i);
-cur->battleCry();
-cur->rangedAttack();
-cur->meleeAttack();
-}
-delete vlc;
-return 0;
+	ISpaceMarine* Bob = new TacticalMarine;
+	ISpaceMarine* Jim = new AssaultTerminator;
+	ISquad* vlc = new Squad;
+	vlc->push(Bob);
+	vlc->push(Jim);
+	for (int i = 0; i < vlc->getCount(); ++i)
+	{
+		ISpaceMarine* cur = vlc->getUnit(i);
+		cur->battleCry();
+		cur->rangedAttack();
+		cur->meleeAttack();
+	}
+	delete vlc;
+	std::cout << "-------------------------------------\n";
+	ISpaceMarine* Henry = new TacticalMarine;
+	ISpaceMarine* Paul = new TacticalMarine;
+	ISpaceMarine* Jacques = new AssaultTerminator;
+	ISpaceMarine* Thomas = new AssaultTerminator;
+	Squad t1;
+	Squad t2;
+	t1.push(Henry);
+	t1.push(Paul);
+	t2.push(Jacques);
+	t2.push(Thomas);
+	Squad t3(t2);
+	t2 = t1;
+	std::cout << "-------------------------------------\n";
+	for (int i = 0; i < t3.getCount(); ++i)
+	{
+		ISpaceMarine* cur = t3.getUnit(i);
+		cur->battleCry();
+		cur->rangedAttack();
+		cur->meleeAttack();
+	}
+	return 0;
 }

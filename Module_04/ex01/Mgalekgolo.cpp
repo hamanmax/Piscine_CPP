@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.cpp                                          :+:      :+:    :+:   */
+/*   Mgalekgolo.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/12 17:19:08 by mhaman            #+#    #+#             */
-/*   Updated: 2021/04/12 17:20:04 by mhaman           ###   ########lyon.fr   */
+/*   Created: 2021/04/12 17:20:58 by mhaman            #+#    #+#             */
+/*   Updated: 2021/04/12 17:21:46 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Enemy.hpp"
+#include "Mgalekgolo.hpp"
 
-Enemy::Enemy(int hp, std::string const & type):_hp(hp),_type(type){}
+Mgalekgolo::Mgalekgolo():Enemy(250,"Hunter"){
+	std::cout << "* strange worms noises *" << std::endl;
+}
 
-Enemy::Enemy(Enemy const & copy):_hp(copy._hp),_type(copy._type){*this = copy;}
+Mgalekgolo::Mgalekgolo(Mgalekgolo const & copy):Enemy(copy._hp,copy._type){*this = copy;}
 
-Enemy & Enemy::operator=(Enemy const & op){
+Mgalekgolo & Mgalekgolo::operator=(Mgalekgolo const & op){
 	if (this != &op)
 	{
-		this->_type = op._type;
 		this->_hp = op._hp;
+		this->_type = op._type;
 	}
 	return *this;
 }
 
-int Enemy::getHP() const{
-	return(this->_hp);}
-std::string Enemy::getType() const {
-	return(this->_type);}
-
-void Enemy::takeDamage(int damage)
+void Mgalekgolo::takeDamage(int damage)
 {
-	if (damage > 0)
-		this->_hp -= damage;
-	if (this->_hp < 0)
-		this->_hp = 0;
+	Enemy::takeDamage(damage - 15);
 }
 
-Enemy::~Enemy(){}
+Mgalekgolo::~Mgalekgolo(){
+	std::cout << "A swarm of worms dig in the ground" << std::endl;
+}
