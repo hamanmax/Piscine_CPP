@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 20:26:43 by mhaman            #+#    #+#             */
-/*   Updated: 2021/04/13 10:54:31 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 13:44:41 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,12 @@ MateriaSource::MateriaSource(const MateriaSource & copy){*this = copy;}
 MateriaSource & MateriaSource::operator=(const MateriaSource & op){
 	for(int i = 0;i < 4;i++)
 	{
-		this->_source[i] = op._source[i];
+		if (this->_source[i])
+			delete this->_source[i];
+	}
+	for(int i = 0;i < 4;i++)
+	{
+		this->_source[i] = op._source[i]->clone();
 	}
 	return *this;
 }

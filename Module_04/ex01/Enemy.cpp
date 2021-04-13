@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 17:19:08 by mhaman            #+#    #+#             */
-/*   Updated: 2021/04/12 17:20:04 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 13:44:57 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ void Enemy::takeDamage(int damage)
 {
 	if (damage > 0)
 		this->_hp -= damage;
-	if (this->_hp < 0)
-		this->_hp = 0;
+	if (this->_hp <= 0)
+		delete this;
 }
 
-Enemy::~Enemy(){}
+Enemy::~Enemy(){
+}
