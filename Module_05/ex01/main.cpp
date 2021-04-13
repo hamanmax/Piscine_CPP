@@ -1,44 +1,29 @@
 #include <iostream>
 #include <stdexcept>
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 int main()
 {
+	Bureaucrat Jhon("Jhon",25);
+	Bureaucrat Tim("Tim",95);
 
-		try
+
+	Bureaucrat Error1("Jhon",0);
+	Bureaucrat Error2("Tim",155);
+
+	Form Permit("A2",60);
+	Form Contrat("Travail",20);
+
+	Form ErrorF("A2",0);
+	Form Error2F("Travail",155);
+
+	Jhon.signForm(Permit);
+	Jhon.signForm(Contrat);
+	Tim.signForm(Contrat);
+	while(Jhon.getGrade() > Contrat.getSign())
 	{
-		Bureaucrat tmp1("tups", 2);
-		Bureaucrat tmp("tups1", 7);
-		Bureaucrat tmp2("tups2", 149);
-		Bureaucrat tmp3("tups3", 140);
-		Form        forming("contrat", 15);
-		Form        fromat("test", 25);
-		tmp.doPromote();
-		tmp3.doDemote();
-		std::cout<<tmp;
-		tmp.doDemote();
-		std::cout<<tmp;
-		tmp1.signForm(fromat);
-		tmp.signForm(fromat);
-		tmp.signForm(fromat);
+		Jhon.doPromote();
 	}
-	catch(const Bureaucrat::GradeTooLowException& e)
-	{
-		std::cout<< e.what() << "\n";
-		return (1);
-	}catch(const Bureaucrat::GradeTooHightException& e)
-	{
-		std::cout<< e.what() << "\n";
-		return (1);
-	}
-	catch(const Form::GradeTooLowException& e)
-	{
-		std::cout<< e.what() << "\n";
-		return (1);
-	}
-	catch(const Form::GradeTooHightException& e)
-	{
-		std::cout<< e.what() << "\n";
-		return (1);
-	}
+	Jhon.signForm(Contrat);
 }

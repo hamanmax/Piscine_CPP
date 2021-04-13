@@ -1,4 +1,17 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+
+Bureaucrat::Bureaucrat(){}
+
+Bureaucrat::Bureaucrat(Bureaucrat const & copy){*this = copy;}
+
+Bureaucrat & Bureaucrat::operator=(Bureaucrat const & op){
+	if (this != &op)
+	{
+		this->_grade = op._grade;
+	}
+	return *this;
+}
 
 Bureaucrat::~Bureaucrat(){}
 
@@ -68,5 +81,43 @@ void Bureaucrat::doDemote(){
 	catch(const std::exception& GradeTooHightException)
 	{
 		std::cout << GradeTooHightException.what() << '\n';
+	}
+}
+
+void Bureaucrat::signForm(Form & f){
+	try 
+	{
+
+	if (this->_grade <= f.getSign())
+	{
+		f.beSigned(*this);
+		std::cout << "<" << this->_name << "> signs <" << f.getName() << ">"<< "\n";
+	}
+	else
+		throw Form::GradeTooLowException();
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "<" << this->_name << "> can't sign <"<< f.getName() << "> because " << e.what() << '\n';
+	}
+}
+
+
+void Bureaucrat::executeForm(Form const & f){
+	try 
+	{
+		if (this->_grade <= f.getExe() && f.getStatus() == true)
+		{
+			std::cout << "<" << this->_name << "> execute <" << f.getName() << ">"<< "\n";
+			f.execute(*this);
+		}
+		else if (f.getStatus() == false)
+			throw Form::FormIsNotSigned();
+		else
+			throw Form::GradeTooLowException();
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "<" << this->_name << "> can't execute <"<< f.getName() << "> because " << e.what() << '\n';
 	}
 }

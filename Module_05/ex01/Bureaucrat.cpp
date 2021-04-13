@@ -1,4 +1,17 @@
-#include "Bureaucrat.hpp"
+#include"Bureaucrat.hpp"
+#include "Form.hpp"
+
+Bureaucrat::Bureaucrat(){}
+
+Bureaucrat::Bureaucrat(Bureaucrat const & copy){*this = copy;}
+
+Bureaucrat & Bureaucrat::operator=(Bureaucrat const & op){
+	if (this != &op)
+	{
+		this->_grade = op._grade;
+	}
+	return *this;
+}
 
 Bureaucrat::~Bureaucrat(){}
 
@@ -69,4 +82,14 @@ void Bureaucrat::doDemote(){
 	{
 		std::cout << GradeTooHightException.what() << '\n';
 	}
+}
+
+void Bureaucrat::signForm(Form & f){
+	if (this->_grade <= f.getSign())
+	{
+		f.beSigned(*this);
+		std::cout << "<" << this->_name << "> signs <" << f.getName() << ">"<< "\n";
+	}
+	else
+		std::cout << "<" << this->_name << "> cant sign <" << f.getName() << "> because <"<< "grade is to hight" << ">" << "\n";
 }

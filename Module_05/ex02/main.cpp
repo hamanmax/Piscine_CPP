@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
