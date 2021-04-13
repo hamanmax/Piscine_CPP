@@ -10,34 +10,36 @@ int main()
 {
 	srand (time(NULL));
 		Intern     akerdeka;
-		Bureaucrat tmp("tulipe", 1);
-		Bureaucrat tmp1("tups", 125);
-		ShrubberyCreationForm form("asciiart");
-		RobotomyRequestForm form1("testing");
-		PresidentialPardonForm form2("yessir");
+		Bureaucrat Jean("Jean", 1);
+		Bureaucrat Jacques("Jacques", 125);
+		ShrubberyCreationForm Tree("Arbre");
+		ShrubberyCreationForm Fraises("Fraise");
+		RobotomyRequestForm Kill("Wassim");
+		PresidentialPardonForm Pardon("Thomas VDB");
 		Form * tester;
 		tester = akerdeka.makeForm("robotomy request", "Yo");
 		if (tester != NULL)
 		{
-			tmp.executeForm(*tester);
-			tmp.signForm(*tester);
-			tmp.executeForm(*tester);
+			Jean.executeForm(*tester);
+			Jean.signForm(*tester);
+			Jean.executeForm(*tester);
 			std::cout << *tester;
 		}
-		std::cout << tmp;
-		tmp1.signForm(form);
-		tmp.signForm(form);
-		tmp1.executeForm(form);
-		tmp.executeForm(form);
-		tmp.executeForm(form);
-		tmp1.signForm(form1);
-		tmp.signForm(form1);
-		tmp1.executeForm(form1);
-		tmp.executeForm(form1);
-		tmp.executeForm(form1);
-		tmp1.signForm(form2);
-		tmp.signForm(form2);
-		tmp1.executeForm(form2);
-		tmp.executeForm(form2);
-		tmp.executeForm(form2);
+		std::cout << Jean;
+		Jacques.signForm(Tree);
+		Jean.signForm(Tree);
+		Jacques.executeForm(Fraises);
+		Jean.executeForm(Tree);
+		Jacques.signForm(Kill);
+		Jean.signForm(Kill);
+		Jacques.executeForm(Kill);
+		Jean.executeForm(Kill);
+		Jean.executeForm(Kill);
+		Jean.executeForm(Kill);
+		Jean.executeForm(Kill);
+		Jacques.signForm(Pardon);
+		Jean.signForm(Pardon);
+		Jacques.executeForm(Pardon);
+		Jean.executeForm(Pardon);
+		Jean.executeForm(Pardon);
 }
