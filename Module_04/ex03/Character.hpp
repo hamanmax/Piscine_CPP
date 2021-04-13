@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 12:04:24 by mhaman            #+#    #+#             */
-/*   Updated: 2021/04/12 20:27:20 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 10:27:26 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #include <cstring>
 
 class AMateria;
-
 class Character : public ICharacter
 {
 	private:

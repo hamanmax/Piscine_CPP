@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 20:26:43 by mhaman            #+#    #+#             */
-/*   Updated: 2021/04/12 20:26:52 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 10:54:31 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ void MateriaSource::learnMateria(AMateria *m){
 AMateria * MateriaSource::createMateria(std::string const & type){
 	for (int i = 0;i < 4;i++)
 	{
-		if (this->_source[i]->getType() == type)
+		if (this->_source[i] && this->_source[i]->getType() == type)
 		{
 			AMateria * copy = this->_source[i]->clone();
 			return copy;
 		}
 	}
-	std::cout << "Materia type is invalid" << "\n";
+	std::cout << "Materia type is invalid\n";
 	return (NULL);
 }

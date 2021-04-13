@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 10:12:44 by mhaman            #+#    #+#             */
-/*   Updated: 2021/04/12 20:27:00 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 10:38:35 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define AMATERIA_HPP
 #include <iostream>
 #include "ICharacter.hpp"
+class ICharacter;
 class AMateria 
 {
 	private:
