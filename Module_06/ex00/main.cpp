@@ -6,7 +6,7 @@
 /*   By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 11:15:12 by mhaman            #+#    #+#             */
-/*   Updated: 2021/04/09 18:17:29 by mhaman           ###   ########lyon.fr   */
+/*   Updated: 2021/04/17 09:49:15 by mhaman           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,14 @@
 #include <limits.h>
 #include <math.h>
 #include <exception>
+#include "impossible.hpp"
 
 int main(int argc, char const *argv[])
 {
 	if ( argc != 2 || argv[1][0] == 0){
-		std::cout << "Not enought Parameters\n";
+		std::cout << "Wrong Parameters\n";
 		return(-1);
 	}
-	class CharIsImpossibleExce: virtual public std::exception{
-		public:
-			virtual const char * what()const throw(){return("char\t: impossible.\n");}};
-	class CharIsNotDisplayableExce: virtual public std::exception{
-		public:
-			virtual const char * what()const throw(){return("char\t: non displayable.\n");}};
-
 	std::string line(argv[1]);
 	double d;
 	if (isprint(line[0]) != 0 && line.size() == 1 && isdigit(line[0]) == 0)
@@ -46,16 +40,24 @@ int main(int argc, char const *argv[])
 	}
 	catch(const std::exception& e){
 		std::cout << e.what();}
-	std::cout <<"int\t: " << static_cast<int>(d) << "\n";
+	try
+	{
+		if (isinf(d) == true || isnan(d) == true)
+			throw IntIsImpossibleExce();
+		else
+			std::cout <<"int\t: " << static_cast<int>(d) << "\n";
+	}
+	catch(const std::exception& e){
+		std::cout << e.what();}
 	if (d - static_cast<int>(d) == 0)
 	{
-	std::cout <<"float\t: " << static_cast<float>(d) << ".0f\n";
-	std::cout <<"double\t: " << static_cast<double>(d) << ".0\n";
+		std::cout <<"float\t: " << static_cast<float>(d) << ".0f\n";
+		std::cout <<"double\t: " << d << ".0\n";
 	}
 	else
 	{
-	std::cout <<"float\t: " << static_cast<float>(d) << "f\n";
-	std::cout <<"double\t: " << d << "\n";
+		std::cout <<"float\t: " << static_cast<float>(d) << "f\n";
+		std::cout <<"double\t: " << d << "\n";
 	}
 	return 0;
 }

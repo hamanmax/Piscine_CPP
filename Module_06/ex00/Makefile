@@ -6,7 +6,7 @@
 #    By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/09 18:16:22 by mhaman            #+#    #+#              #
-#    Updated: 2021/04/09 18:17:01 by mhaman           ###   ########lyon.fr    #
+#    Updated: 2021/04/17 09:51:32 by mhaman           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,4 +37,3 @@ fclean: clean;
 	rm -rf $(NAME)
 
 re: fclean all
-

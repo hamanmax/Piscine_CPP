@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
 class Base
 {
 	public:
@@ -58,9 +59,12 @@ int main(void)
 	srand(time(NULL));
 	Base *Tutu;
 
+	std::cout << "Generation de la class\n";
 	Tutu = generate();
+	std::cout << "Test de pointeurs\n";
 	identify_from_pointer(Tutu);
-	identify_from_reference(*Tutu);
-
+	Base & Tata = *Tutu;
+	std::cout << "Test de reference\n";
+	identify_from_reference(Tata);
 	delete Tutu;
 }

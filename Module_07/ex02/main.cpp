@@ -13,7 +13,6 @@ std::cout << tabstr.size()<< "\n";
 
 Array<int> tabint2(tabint);
 
-
 std::cout << tabint2[6] << "\n";
 tabint[6] = 250;
 std::cout << tabint[6] << "\n";
