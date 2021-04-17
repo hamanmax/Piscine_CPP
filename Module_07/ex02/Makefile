@@ -6,7 +6,7 @@
 #    By: mhaman <mhaman@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/09 18:16:22 by mhaman            #+#    #+#              #
-#    Updated: 2021/04/16 21:26:44 by mhaman           ###   ########lyon.fr    #
+#    Updated: 2021/04/17 17:09:40 by mhaman           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OBJ		=	${SRC:.cpp=.o}
 
 FLAG	=	-Wall -Werror -Wextra -std=c++98
 
-NAME	=	convert
+NAME	=	Array
 
 CC		=	clang++
 

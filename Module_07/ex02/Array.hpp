@@ -15,6 +15,8 @@ class Array
 		}
 		Array<T>(unsigned int n):_size(n){
 			this->_Arr = new T[this->_size];
+			for (unsigned int i = 0;i < this->_size;i++)
+				this->_Arr[i] = T();
 		}
 		Array<T>(Array const & copy):_size(copy._size){
 			this->_Arr = new T[copy._size];
@@ -24,10 +26,7 @@ class Array
 			}
 		}
 		~Array() {
-			if (_size == 0)
-				delete[] _Arr;
-			else
-				delete[] _Arr;
+				delete[] this->_Arr;
 		}
 		Array & operator=(const Array & copy) {
 			this->_size = copy._size;
