@@ -1,27 +1,35 @@
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
 #include<stack>
+#include <deque>
 
-class mutantstack : virtual public std::stack<int>
+template< class T,  class Container = std::deque <T> >
+
+class MutantStack : virtual public std::stack<T,Container>
 {
 	private:
 		/*Arg*/
 	protected:
 		/*Arg*/
 	public:
-		mutantstack();
-		mutantstack(mutantstack const & copy);
-		mutantstack & operator=(mutantstack const & op);
-		~mutantstack();
+		MutantStack(void): std::stack<T,Container>() {}
+		virtual ~MutantStack(void) {}
+
+		MutantStack(std::stack<T,Container> const &obj): std::stack<T,Container>(obj) {}
+		MutantStack(MutantStack const &obj): std::stack<T,Container>(obj) {}
+
+		MutantStack &operator=(const MutantStack &op)
+		{
+			if (this == &op)
+				return (*this);
+			std::stack<T,Container>::operator=(op);
+			return (*this);
+		};
+		typedef typename Container::iterator iterator;
+		iterator begin(){
+			return this->c.begin();
+		};
+		iterator end(){
+			return this->c.end ();}
 };
-
-mutantstack::mutantstack(){}
-
-mutantstack::mutantstack(mutantstack const & copy){*this = copy;}
-
-mutantstack & mutantstack::operator=(mutantstack const & op){
-}
-
-mutantstack::~mutantstack(){}
-
 #endif

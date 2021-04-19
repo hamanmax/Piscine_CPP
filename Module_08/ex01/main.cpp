@@ -7,11 +7,11 @@ int randomNumber()
 	return(rand());
 }
 
-struct c_unique {
-  int current;
-  c_unique() {current=0;}
-  int operator()() {return ++current;}
-} UniqueNumber;
+struct	c_unique {
+	int current;
+	c_unique() {current=0;}
+	int operator()() {return ++current;}
+}		UniqueNumber;
 
 int main()
 {
